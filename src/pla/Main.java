@@ -1,7 +1,10 @@
 package pla;
 
+import java.math.RoundingMode;
 import java.util.Random;
 import java.util.Scanner;
+
+import com.sun.scenario.effect.Flood;
 
 public class Main {
 
@@ -30,6 +33,12 @@ public class Main {
 		for(int i = 0; i < size; i++){
 			System.out.println( "(" + xCoordinates[i] + ", " + yCoordinates[i] + ")");
 		}
+		
+		// Declaration of the line
+		Double xLine = rand.nextDouble()*2-1;
+		Double yLine = rand.nextDouble()*2-1;
+		int A = (int) Math.floor(yLine/xLine);	//Slope
+		Double C = yLine - A*xLine;				//Constant
 	}
 
 }
