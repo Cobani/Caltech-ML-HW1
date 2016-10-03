@@ -19,7 +19,7 @@ public class Main {
 		Double[] xCoordinates = new Double[size];
 		Double[] yCoordinates = new Double[size];
 		
-		// y coordinates are being created
+		// x coordinates are being created
 		for(int i = 0; i < size; i++ ){
 			xCoordinates[i] = rand.nextDouble()*2-1;
 		}
@@ -35,10 +35,16 @@ public class Main {
 		}
 		
 		// Declaration of the line
-		Double xLine = rand.nextDouble()*2-1;
-		Double yLine = rand.nextDouble()*2-1;
-		int A = (int) Math.floor(yLine/xLine);	//Slope
-		Double C = yLine - A*xLine;				//Constant
+		Double[] xs = new Double[2];
+		Double[] ys = new Double[2];
+		
+		xs[0] = rand.nextDouble()*2-1;
+		xs[1] = rand.nextDouble()*2-1;
+		ys[0] = rand.nextDouble()*2-1;
+		ys[1] = rand.nextDouble()*2-1;
+		
+		Double A = (ys[1]-ys[0])/(xs[1]-xs[0]); //Slope
+		Double C = ys[1] - A*xs[1];             //Constant
 	}
 
 }
