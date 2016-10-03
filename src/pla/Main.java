@@ -1,10 +1,7 @@
 package pla;
 
-import java.math.RoundingMode;
 import java.util.Random;
 import java.util.Scanner;
-
-import com.sun.scenario.effect.Flood;
 
 public class Main {
 
@@ -13,6 +10,7 @@ public class Main {
 		// size of total points is determined and random object defined.
 		Scanner scan = new Scanner(System.in);
 		int size = scan.nextInt();
+		scan.close();
 		Random rand = new Random();
 		
 		// x and y coordinates are defined
@@ -45,6 +43,19 @@ public class Main {
 		
 		Double A = (ys[1]-ys[0])/(xs[1]-xs[0]); //Slope
 		Double C = ys[1] - A*xs[1];             //Constant
+		
+		//Classification of points according to the line.
+		Double[] outs = new Double[size];
+		
+		for(int i = 0; i < size; i++){
+			if( xCoordinates[i] * A + C <= 0 ){
+				outs[i] = -1.0;
+			}
+			else{
+				outs[i] = 1.0;
+			}
+		}
+		
 	}
 
 }
